@@ -1,0 +1,50 @@
+{% extends "base_menu.html" %}
+{% load static %}
+{% block content %}
+    <div class="pt-12 text-black">
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+          <!--Left Col-->
+          <div class="flex flex-col w-full justify-center items-start text-center">
+
+            <div class="flex flex-col md:flex-row sm:flex-col w-full">
+                <div class="w-full mb-2 md:w-1/2 md:mx-2 rounded shadow">
+                    <div class="px-auto py-6">
+                        <p class="text-indigo font-light">
+                            <a href="{% url 'reports:upload'  %}">
+                                บันทึก<br/>
+                                ผลวิเคราะห์
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full mb-2 md:w-1/2 md:mx-2 rounded shadow">
+                    <div class="px-auto py-4">
+                        <p class="text-indigo font-light">
+                        <a href="{% url 'reports:list' %}">
+                           ดูผลวิเคราะห์
+                        </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full mb-2 md:w-1/2 md:mx-2 rounded shadow">
+                    <div class="px-auto py-4">
+                        <p class="text-indigo font-light">
+                        Print<br /> 
+                        Customer Forms
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full mb-2 md:w-1/2 md:mx-2 rounded shadow">
+                    <div class="px-auto py-4">
+                        <p class="text-indigo font-light">
+                        บันทึกผล<br />
+                        Standard spec
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Koki</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/css/all.min.css' %}" />
+		{% tailwind_css %}
+    {% block head %} {% endblock %}
+	</head>
+
+  <body class="leading-normal tracking-normal text-white gradient font-kanit">
+    {% block navbar %} {% endblock %}
+        {% block welcome %} {% endblock %}
+        {% block content %}
+        {% endblock %}
+    {% block footer %} {% endblock %}
+	</body>
+</html>
