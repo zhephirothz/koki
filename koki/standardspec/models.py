@@ -10,9 +10,9 @@ class StandardSpec(models.Model):
     # spec_list = models.ManyToManyField(
         # StandardSpecLine
     # )
-    # remark = models.TextField(
-        # verbose_name="Remark"
-    # )
+    remark = models.TextField(
+        verbose_name="Remark"
+    )
 
     # class Meta:
         # ordering = "spec_name"
@@ -24,7 +24,6 @@ class StandardSpec(models.Model):
 class StandardSpecLine(models.Model):
     standard_spec_id = models.ForeignKey(
         StandardSpec,
-        related_name="standard_spec",
         on_delete=models.CASCADE
     )
     name = models.CharField(
