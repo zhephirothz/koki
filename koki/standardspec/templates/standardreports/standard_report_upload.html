@@ -1,0 +1,54 @@
+{% extends "base_menu.html" %}
+{% load humanize %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<div class="relative min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center"
+	style="">
+	<div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+	<div class="sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+		<div class="text-center">
+      <h2 class="mt-5 text-3xl font-bold text-gray-900">
+        Standard Spec
+      </h2>
+    </div>
+    <form class="mt-8 space-y-3" action="{% url "standardspec:upload" %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                  <div class="grid grid-cols-1 space-y-2">
+                        <label class="text-sm font-bold text-gray-500 tracking-wide">Standard Spec</label>
+                    </div>
+                    <div class="grid grid-cols-1 space-y-2">
+                                    <label class="text-sm font-bold text-gray-500 tracking-wide">ไฟล์</label>
+                        <input
+                                type="file"
+                                name="reports_file"
+                                required="required"
+                                accept=".xls,.xlsx,.csv"
+                            >
+                    </div>
+                            <p class="text-sm text-gray-300">
+                                <span>ประเภทไฟล์: csv</span>
+                            </p>
+                    <div>
+                        <button type="submit" class="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
+                                    font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
+                        Submit
+                    </button>
+                    </div>
+        </form>
+	</div>
+</div>
+
+<div class='text-black'>
+  {{ report_data }}
+</div>
+
+
+<style>
+	.has-mask {
+		position: absolute;
+		clip: rect(10px, 150px, 130px, 10px);
+	}
+</style>-
+{% endblock %}

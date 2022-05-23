@@ -4,6 +4,10 @@ from .models import StandardSpecLine, StandardSpec
 
 class StandardSpecLineInline(admin.TabularInline):
     model = StandardSpecLine
+    fields = [
+        'name',
+        'value_text',
+    ]
     extra = 5
 
 
